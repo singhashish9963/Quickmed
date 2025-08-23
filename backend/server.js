@@ -15,7 +15,13 @@ connectCloudinary();
 
 //middlewares
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+  origin: "https://quickmed-frontend.onrender.com",  // your frontend domain
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+  credentials: true
+}));
+app.options("*", cors());
 
 //api endpoint
 app.use('/api/admin',adminRouter)
