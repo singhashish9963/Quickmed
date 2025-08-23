@@ -16,9 +16,12 @@ connectCloudinary();
 //middlewares
 app.use(express.json());
 app.use(cors({
-  origin: "https://quickmed-frontend.onrender.com",  // your frontend domain
+  origin: [
+    "https://quickmed-frontend.onrender.com",
+    "http://localhost:5173"
+  ],
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-  allowedHeaders: ["Content-Type", "Authorization"],
+  allowedHeaders: ["Content-Type", "Authorization", "token"],
   credentials: true
 }));
 app.options("*", cors());
