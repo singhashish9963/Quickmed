@@ -23,7 +23,7 @@ app.use(cors({
     
   ],
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-  allowedHeaders: ["Content-Type", "Authorization", "token",aToken,aToken],
+  allowedHeaders: ["Content-Type", "Authorization", "token","aToken","dToken"],
   credentials: true
 }));
 app.options("*", cors());
